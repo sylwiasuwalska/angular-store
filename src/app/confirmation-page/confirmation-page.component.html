@@ -1,0 +1,23 @@
+<div class="confirmation-page">
+  <h1 class="confirmation-title">Order Confirmation</h1>
+  <p class="confirmation-message">
+    Thank you for your order, {{ order.fullName }}!
+  </p>
+  <div class="order-summary" *ngIf="order">
+    <h2 class="summary-title">Order Summary</h2>
+    <ul class="summary-list">
+      <li
+        class="summary-item"
+        *ngFor="let orderedProduct of order.orderedItems"
+      >
+        <span class="item-name">{{ orderedProduct.item.name }} x </span>
+        <span class="item-quantity">{{ orderedProduct.quantity }} x </span>
+        <span class="item-price">${{ orderedProduct.item.price }}</span>
+      </li>
+    </ul>
+    <div class="total-cost">
+      <strong>Total Cost: ${{ order.totalCost.toFixed(2) }}</strong>
+    </div>
+  </div>
+  <a routerLink="/">&larr; Back to product list</a>
+</div>

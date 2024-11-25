@@ -1,0 +1,9 @@
+.product-container {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+
+  a {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,70 @@
+.confirmation-page {
+  background-color: white;
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.1s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.confirmation-title {
+  font-size: 24px;
+  color: #333;
+}
+
+.confirmation-message {
+  font-size: 16px;
+  color: #666;
+}
+
+.order-summary {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summary-title {
+  font-size: 20px;
+  color: #333;
+}
+
+.summary-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  padding: 10px 25px;
+  border-bottom: 1px solid #ddd;
+  width: 25%;
+}
+
+.item-name,
+.item-quantity,
+.item-price {
+  color: #333;
+  margin: 5px 0;
+}
+
+.total-cost {
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #083d88;
+  margin-top: 20px;
+}

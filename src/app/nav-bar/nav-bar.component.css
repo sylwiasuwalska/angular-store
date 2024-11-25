@@ -1,0 +1,32 @@
+.header {
+  background-color: #122f56;
+  padding: 10px;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 15px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.cart-count {
+  display: inline-block;
+  position: relative;
+  top: 0px;
+  right: -10px;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: white;
+  color: #122f56;
+  padding: 4px;
+  font-size: 14px;
+}
