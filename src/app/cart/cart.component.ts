@@ -49,6 +49,7 @@ export class CartComponent {
 
   removeItem(item: Product) {
     this.cartService.removeFromCart(item);
+    alert(`Product ${item.name} removed from cart.`);
   }
 
   clearCart() {

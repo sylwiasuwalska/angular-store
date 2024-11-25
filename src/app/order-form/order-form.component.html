@@ -1,5 +1,7 @@
 <form #form="ngForm" (ngSubmit)="submitForm()" class="order-form">
   <h1 class="form-title">Submit your order</h1>
+
+  <!-- Full Name Input -->
   <input
     type="text"
     name="fullName"
@@ -7,10 +9,28 @@
     minlength="8"
     maxlength="32"
     [(ngModel)]="fullName"
+    #fullNameInput="ngModel"
     placeholder="Enter your full name"
     class="form-input"
   />
+  <div
+    *ngIf="
+      fullNameInput.invalid && (fullNameInput.dirty || fullNameInput.touched)
+    "
+    class="error-message"
+  >
+    <div *ngIf="fullNameInput.errors?.['required']">Full name is required.</div>
+    <div *ngIf="fullNameInput.errors?.['minlength']">
+      Full name must be at least 8 characters long.
+    </div>
+    <div *ngIf="fullNameInput.errors?.['maxlength']">
+      Full name cannot exceed 32 characters.
+    </div>
+  </div>
+
   <br />
+
+  <!-- Address Input -->
   <input
     type="text"
     name="address"
@@ -18,21 +38,61 @@
     minlength="8"
     maxlength="32"
     [(ngModel)]="address"
+    #addressInput="ngModel"
     placeholder="Enter your address"
     class="form-input"
   />
+  <div
+    *ngIf="addressInput.invalid && (addressInput.dirty || addressInput.touched)"
+    class="error-message"
+  >
+    <div *ngIf="addressInput.errors?.['required']">Address is required.</div>
+    <div *ngIf="addressInput.errors?.['minlength']">
+      Address must be at least 8 characters long.
+    </div>
+    <div *ngIf="addressInput.errors?.['maxlength']">
+      Address cannot exceed 32 characters.
+    </div>
+  </div>
+
   <br />
+
   <input
     type="text"
     name="cardNumber"
     required
-    minlength="8"
-    maxlength="32"
+    minlength="16"
+    maxlength="16"
+    pattern="^\d{8,32}$"
     [(ngModel)]="cardNumber"
+    #cardNumberInput="ngModel"
     placeholder="Enter your card number"
     class="form-input"
   />
+  <div
+    *ngIf="
+      cardNumberInput.invalid &&
+      (cardNumberInput.dirty || cardNumberInput.touched)
+    "
+    class="error-message"
+  >
+    <div *ngIf="cardNumberInput.errors?.['required']">
+      Card number is required.
+    </div>
+    <div *ngIf="cardNumberInput.errors?.['minlength']">
+      Card number must be at 16 characters long.
+    </div>
+    <div *ngIf="cardNumberInput.errors?.['maxlength']">
+      Card number must be at 16 characters long.
+    </div>
+    <div *ngIf="cardNumberInput.errors?.['pattern']">
+      Card number must contain only digits.
+    </div>
+  </div>
+
   <br />
+
+  <!-- Submit Button -->
   <input
     type="submit"
     [disabled]="form.invalid"
