@@ -57,6 +57,7 @@
 
   <br />
 
+  <!-- Card Number Input -->
   <input
     type="text"
     name="cardNumber"
@@ -88,6 +89,22 @@
     <div *ngIf="cardNumberInput.errors?.['pattern']">
       Card number must contain only digits.
     </div>
+  </div>
+
+  <br />
+
+  <!-- Agreement Checkbox -->
+  <label>
+    <input
+      type="checkbox"
+      name="agreement"
+      [(ngModel)]="agreement"
+      (ngModelChange)="onAgreementChange($event)"
+    />
+    I agree to send my personal data.
+  </label>
+  <div *ngIf="!agreement && form.submitted" class="error-message">
+    You must agree before submitting.
   </div>
 
   <br />

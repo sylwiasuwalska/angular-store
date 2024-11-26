@@ -45,3 +45,7 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+.error-message {
+  color: rgb(120, 19, 19);
+}
